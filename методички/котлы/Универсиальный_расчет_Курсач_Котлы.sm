@@ -1,0 +1,3512 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Solver" version="1.3.0.9126"?>
+<worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
+  <settings ppi="192">
+    <identity>
+      <id>101c13b9-5eb1-4622-bb66-91b4d2853585</id>
+      <revision>14</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <trailingZeros>false</trailingZeros>
+      <significantDigitsMode>false</significantDigitsMode>
+      <mixedNumbers>false</mixedNumbers>
+      <roundingMode>0</roundingMode>
+      <approximateEqualAccuracy>3</approximateEqualAccuracy>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" viewMode="2" printGrid="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true" hideElementsHighlightings="true">
+      <paper id="9" orientation="Portrait" width="827" height="1169" />
+      <margins left="39" right="39" top="49" bottom="49" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Core" version="1.73.9126.0" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.73.9126.0" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="TextRegion" version="1.73.9126.0" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+      <assembly name="CoolProp Wrapper" version="6.4.8214.13502" guid="ca92ef03-c7da-4888-98ad-528482733e2f" />
+    </dependencies>
+  </settings>
+  <regions type="content">
+    <region left="0" top="9" width="127" height="23" color="#000000" bgColor="#ffff00" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="background-color: #ffff00;">Исходные данные</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="36" width="212" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Паропроизводительность котла</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="72" width="201" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">D.п</e>
+          <e type="operand">1000</e>
+          <e type="operand">1000</e>
+          <e type="operand">3600</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">277.7778</e>
+        </result>
+      </math>
+    </region>
+    <region left="198" top="72" width="30" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kg</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="117" width="230" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Основное топливо: Природный газ</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="153" width="201" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура уходящих газов:</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="189" width="74" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ν.ух</e>
+          <e type="operand">125</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="189" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="225" width="333" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расход вторичного пара(промежуточный перегрев)</p>
+        </content>
+      </text>
+    </region>
+    <region left="189" top="252" width="30" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kg</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="261" width="188" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">D.вт</e>
+          <e type="operand">0.84</e>
+          <e type="operand">D.п</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">233.3333</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="306" width="255" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура и давление острого пара</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="342" width="74" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t.пп</e>
+          <e type="operand">545</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="342" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="108" top="342" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="126" top="342" width="95" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p.пп</e>
+          <e type="operand">25</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="387" width="467" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура пара на входе и выходе из промежуточного перегревателя</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="423" width="82" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t'.вт</e>
+          <e type="operand">310</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="423" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="117" top="423" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="144" top="423" width="90" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t''.вт</e>
+          <e type="operand">545</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="225" top="423" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="468" width="446" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Давление пара на входе и выходе из промежуточного перегревателя</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="504" width="111" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p'.вт</e>
+          <e type="operand">3.9</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="144" top="504" width="119" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p''.вт</e>
+          <e type="operand">3.7</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="117" top="513" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="540" width="446" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Давление и температура питательной воды(на входе в экономайзер)</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="576" width="111" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p.пв</e>
+          <e type="operand">31.5</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="117" top="576" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="144" top="576" width="74" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t.пв</e>
+          <e type="operand">265</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="225" top="576" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="621" width="193" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия перегретого пара</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="657" width="82" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.пп</e>
+          <e type="operand">3323</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="657" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="702" width="411" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия пара на входе в промежуточный пароперегреватель</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="729" width="106" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h'.вт</e>
+          <e type="operand">2992.5</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="108" top="729" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="774" width="430" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия пара на выходе из промежуточного пароперегревателя</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="810" width="114" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h''.вт</e>
+          <e type="operand">3551.5</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="117" top="810" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="864" width="199" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия питательной воды</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="900" width="98" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.пв</e>
+          <e type="operand">1158.1</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="99" top="900" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="954" width="168" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расход воды на впрыски</p>
+        </content>
+      </text>
+    </region>
+    <region left="72" top="981" width="30" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kg</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="990" width="73" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">D.впр</e>
+          <e type="operand">21</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1044" width="173" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Доля рециркуляции газов</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1071" width="68" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">r.r</e>
+          <e type="operand">0.1</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1107" width="216" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура холодного воздуха</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1143" width="66" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t.хв</e>
+          <e type="operand">25</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="63" top="1143" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1179" width="330" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Низшая теплота сгорания [по таблице IV стр. 140]:</p>
+        </content>
+      </text>
+    </region>
+    <region left="90" top="1206" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1215" width="90" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Q.нр</e>
+          <e type="operand">35590</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1269" width="419" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Теоретические объемы воздуха и газов [по таблице XIII стр. 152]</p>
+        </content>
+      </text>
+    </region>
+    <region left="90" top="1305" width="32" height="59" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="225" top="1305" width="32" height="59" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1323" width="82" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">V.ов</e>
+          <e type="operand">9.44</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="117" top="1323" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="135" top="1323" width="90" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">V.ог</e>
+          <e type="operand">10.59</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1386" width="495" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Теоритеские энтальпии воздуха и газов при 2200 °C [по таблице XVI стр.168]</p>
+        </content>
+      </text>
+    </region>
+    <region left="99" top="1422" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="270" top="1422" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1431" width="90" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.ов</e>
+          <e type="operand">32117</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="144" top="1431" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="171" top="1431" width="90" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.ог</e>
+          <e type="operand">39302</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1476" width="265" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Избытки воздуха в газовом тракте котла</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1512" width="76" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">α.T</e>
+          <e type="operand">1.05</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1548" width="503" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Присосы воздуха извне в топке с D&gt;89 кг/с и с металлической обшивкой топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1584" width="84" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.T</e>
+          <e type="operand">0.03</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1629" width="451" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Избыток воздуха, поступающий через горелки в зону горения топлива</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1665" width="161" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">β.гор</e>
+          <e type="operand">α.T</e>
+          <e type="operand">Δα.T</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.02</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="1710" width="383" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Присосы воздуха в поверхности ширмового перегревателя</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1755" width="66" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.шп</e>
+          <e type="operand">0</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1800" width="465" height="38" color="#000000" fontSize="10">
+      <text lang="rus" width="455" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Присосы воздуха в поверхности пароперегревателя высокого и низкого давления в конвективной шахте на одну ступень</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1845" width="103" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.КПВД</e>
+          <e type="operand">0.03</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="117" top="1845" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="144" top="1845" width="103" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.КПНД</e>
+          <e type="operand">0.03</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1890" width="583" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Присосы воздуха в поверхность водяного экономайзера при одноступенчатом выполнении</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1926" width="97" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.ВЭК</e>
+          <e type="operand">0.02</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="1962" width="566" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Присосы воздуха в поверхность регенеративного вращающегося воздухоподогревателя</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="1998" width="97" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.РВП</e>
+          <e type="operand">0.15</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2043" width="533" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расчет избытков воздуха за каждой поверхностью нагрева после топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2079" width="406" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">α.ух</e>
+          <e type="operand">α.T</e>
+          <e type="operand">Δα.шп</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">Δα.КПВД</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">2</e>
+          <e type="operand">Δα.КПНД</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">Δα.ВЭК</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">Δα.РВП</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.31</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="2106" width="316" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расчет энтальпии воздуха и продуктов сгорания</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2142" width="485" height="23" color="#000000" fontSize="10">
+      <text lang="rus" width="485" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Исходное значение энтальпии газов при 2200 °C и избытке воздуха α.ух </p>
+        </content>
+      </text>
+    </region>
+    <region left="342" top="2169" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2178" width="334" height="34" color="#000000" fontSize="10">
+      <math>
+        <description active="false" position="Top" lang="eng">
+          <content></content>
+        </description>
+        <input>
+          <e type="operand">H.о</e>
+          <e type="operand">H.ог</e>
+          <e type="operand">α.ух</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">H.ов</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">1</e>
+          <e type="operand">r.r</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">54184.097</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="2241" width="243" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия уходящих гахов при ν_ух </p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2286" width="270" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.ух</e>
+          <e type="operand">H.о</e>
+          <e type="operand">ν.ух</e>
+          <e type="operand">2695</e>
+          <e type="operand">0.3</e>
+          <e type="operand">ν.ух</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2548.6405</e>
+        </result>
+      </math>
+    </region>
+    <region left="279" top="2295" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2349" width="202" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия холодного воздуха</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2385" width="237" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.хв</e>
+          <e type="operand">α.ух</e>
+          <e type="operand">H.ов</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">t.хв</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2610</e>
+          <e type="operand">0.25</e>
+          <e type="operand">t.хв</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">403.968</e>
+        </result>
+      </math>
+    </region>
+    <region left="243" top="2385" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2439" width="393" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Располагаемая теплота сгорания топлива на рабочую массу</p>
+        </content>
+      </text>
+    </region>
+    <region left="135" top="2475" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2484" width="130" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Q.рр</e>
+          <e type="operand">Q.нр</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">35590</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="2529" width="289" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Потеря теплоты с механическим недожогом</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2547" width="52" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.4</e>
+          <e type="operand">0</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="54" top="2547" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2574" width="268" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Потеря теплоты с уходящими газами q.2</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2610" width="261" height="55" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.2</e>
+          <e type="operand">H.ух</e>
+          <e type="operand">H.хв</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">100</e>
+          <e type="operand">q.4</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">Q.рр</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">6.0261</e>
+        </result>
+      </math>
+    </region>
+    <region left="270" top="2628" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2673" width="274" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Потеря теплоты с химическим недожогом</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2709" width="76" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.3</e>
+          <e type="operand">0.15</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="2709" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2745" width="247" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Потеря с физическим теплом шлаков</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2781" width="52" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.6</e>
+          <e type="operand">0</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="54" top="2781" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2817" width="344" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Потери теплоты в окружающую среду при D&gt;250 кг/с</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2844" width="68" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.5</e>
+          <e type="operand">0.2</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="2844" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2880" width="267" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>КПД котла по методу обратного баланса</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2916" width="308" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">η</e>
+          <e type="operand">100</e>
+          <e type="operand">q.2</e>
+          <e type="operand">q.3</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">q.4</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">q.5</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">q.6</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">93.6239</e>
+        </result>
+      </math>
+    </region>
+    <region left="306" top="2916" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="2952" width="276" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расчет полного расхода топлива на котел</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2988" width="362" height="66" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">B.р</e>
+          <e type="operand">D.п</e>
+          <e type="operand">h.пп</e>
+          <e type="operand">h.пв</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.вт</e>
+          <e type="operand">h''.вт</e>
+          <e type="operand">h'.вт</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">η</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">Q.рр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">21.9621</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="3060" width="290" height="23" color="#000000" bgColor="#ffff00" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="background-color: #ffff00;">Полное тепловыделение в топочной камере</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3096" width="292" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Оптимальная температура горячего воздуха</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3132" width="285" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t.гв</e>
+          <e type="operand">t.пв</e>
+          <e type="operand">45</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">0.7</e>
+          <e type="operand">ν.ух</e>
+          <e type="operand">120</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">313.5</e>
+        </result>
+      </math>
+    </region>
+    <region left="270" top="3132" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3177" width="263" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпи горячего и холодного воздуха</p>
+        </content>
+      </text>
+    </region>
+    <region left="252" top="3213" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3222" width="233" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.охв</e>
+          <e type="operand">1.313</e>
+          <e type="operand">V.ов</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">30</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">371.8416</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="3276" width="259" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.огк</e>
+          <e type="operand">H.ов</e>
+          <e type="operand">t.гв</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2610</e>
+          <e type="operand">0.25</e>
+          <e type="operand">t.гв</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">3977.1607</e>
+        </result>
+      </math>
+    </region>
+    <region left="261" top="3276" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3339" width="336" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Теплота воздуха, поступающего в топочную камеру</p>
+        </content>
+      </text>
+    </region>
+    <region left="369" top="3339" width="128" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">β.гв</e>
+          <e type="operand">β.гор</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.02</e>
+        </result>
+      </math>
+    </region>
+    <region left="522" top="3339" width="66" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.пл</e>
+          <e type="operand">0</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3375" width="338" height="47" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Q.в</e>
+          <e type="operand">β.гв</e>
+          <e type="operand">H.огк</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">Δα.T</e>
+          <e type="operand">Δα.пл</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">H.охв</e>
+          <e type="operand">1000</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4056.7151</e>
+        </result>
+      </math>
+    </region>
+    <region left="351" top="3384" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3447" width="249" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Теплота внешнего подогрева воздуха</p>
+        </content>
+      </text>
+    </region>
+    <region left="252" top="3447" width="71" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Q.внеш</e>
+          <e type="operand">0</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3483" width="326" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент избытка воздуха для рециркуляции</p>
+        </content>
+      </text>
+    </region>
+    <region left="342" top="3483" width="90" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δα.вп</e>
+          <e type="operand">0.15</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3519" width="167" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">α.рц</e>
+          <e type="operand">α.ух</e>
+          <e type="operand">Δα.вп</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.16</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="3564" width="303" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Теоретическая энтальпия газов рециркуляции</p>
+        </content>
+      </text>
+    </region>
+    <region left="270" top="3591" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3600" width="265" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.орц</e>
+          <e type="operand">H.ог</e>
+          <e type="operand">α.рц</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">H.ов</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">44440.72</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="3645" width="250" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура рециркулирующих газов</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3681" width="162" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ν.рц</e>
+          <e type="operand">45</e>
+          <e type="operand">t.гв</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">358.5</e>
+        </result>
+      </math>
+    </region>
+    <region left="171" top="3681" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3717" width="209" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия газов рециркуляции</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3744" width="245" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.рц</e>
+          <e type="operand">H.орц</e>
+          <e type="operand">ν.рц</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2695</e>
+          <e type="operand">0.3</e>
+          <e type="operand">ν.рц</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">6157.4129</e>
+        </result>
+      </math>
+    </region>
+    <region left="252" top="3744" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3825" width="304" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Полезное тепловыделение в топочной камере</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3870" width="433" height="49" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Q.T</e>
+          <e type="operand">Q.рр</e>
+          <e type="operand">Q.внеш</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">100</e>
+          <e type="operand">q.3</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">q.6</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">Q.в</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">r.r</e>
+          <e type="operand">H.рц</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">40209.0714</e>
+        </result>
+      </math>
+    </region>
+    <region left="450" top="3879" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3933" width="360" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Теоретическая энтальпия газов с учетом рециркуляции</p>
+        </content>
+      </text>
+    </region>
+    <region left="360" top="3960" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="3969" width="334" height="34" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H.от</e>
+          <e type="operand">H.ог</e>
+          <e type="operand">α.T</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">H.ов</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">r.r</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">44998.635</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="4014" width="172" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Адиабатная температура</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4050" width="268" height="55" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ν.a</e>
+          <e type="operand">2050</e>
+          <e type="operand">Q.T</e>
+          <e type="operand">H.от</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">0.075</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1985.5521</e>
+        </result>
+      </math>
+    </region>
+    <region left="270" top="4050" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4113" width="561" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Средняя эффективная толщина излучающего слоя газов в свободной топочной камере</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4140" width="103" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Глубина топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="108" top="4140" width="76" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">b.T</e>
+          <e type="operand">8.51</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="189" top="4140" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4167" width="101" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Ширина топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="108" top="4167" width="84" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">a.T</e>
+          <e type="operand">17.32</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="198" top="4167" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4194" width="240" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Высота призматической части топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="243" top="4194" width="82" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.пр</e>
+          <e type="operand">24.2</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="324" top="4194" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4221" width="196" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Глубина верхней части топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="198" top="4221" width="82" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">b.вч</e>
+          <e type="operand">9.45</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="279" top="4221" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4248" width="191" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Высота верхней части топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="198" top="4248" width="74" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.вч</e>
+          <e type="operand">8.3</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="270" top="4248" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4284" width="252" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Площадь призматической части топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="243" top="4311" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4320" width="240" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">F.пр</e>
+          <e type="operand">2</e>
+          <e type="operand">b.T</e>
+          <e type="operand">a.T</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">h.пр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1250.172</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="4365" width="256" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Поверхность стен верхней части топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="288" top="4392" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4401" width="287" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">F.вч</e>
+          <e type="operand">2</e>
+          <e type="operand">b.вч</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">a.T</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">h.вч</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">a.T</e>
+          <e type="operand">b.вч</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">464.3</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="4437" width="217" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Площадь пода топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="180" top="4464" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4473" width="179" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">F.под</e>
+          <e type="operand">b.T</e>
+          <e type="operand">a.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">147.3932</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="4509" width="254" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Полная поверхность топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="243" top="4536" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4545" width="240" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">F.T</e>
+          <e type="operand">F.пр</e>
+          <e type="operand">F.вч</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">F.под</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1861.8652</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="4581" width="282" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Тепловоспринимающая поверхность ширм</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4617" width="267" height="34" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">F.ш</e>
+          <e type="operand">b.T</e>
+          <e type="operand">b.вч</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">h.вч</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">a.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">127.4752</e>
+        </result>
+      </math>
+    </region>
+    <region left="270" top="4617" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4662" width="139" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Общий объем топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4698" width="289" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">V.T</e>
+          <e type="operand">F.под</e>
+          <e type="operand">h.пр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b.вч</e>
+          <e type="operand">a.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">h.вч</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4925.4096</e>
+        </result>
+      </math>
+    </region>
+    <region left="288" top="4698" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4752" width="246" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Средняя толщина излучающего слоя</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4788" width="155" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">s</e>
+          <e type="operand">3.6</e>
+          <e type="operand">V.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">F.T</e>
+          <e type="operand">F.ш</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">8.9132</e>
+        </result>
+      </math>
+    </region>
+    <region left="153" top="4806" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="4851" width="323" height="23" color="#000000" bgColor="#ffff00" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="background-color: #ffff00;">Расчетная температура газов на выходе из топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4896" width="343" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Удельная тепловая нагрузка поверхности стен топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="4932" width="170" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.F</e>
+          <e type="operand">B.р</e>
+          <e type="operand">Q.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">F.T</e>
+          <e type="operand">1000</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.4743</e>
+        </result>
+      </math>
+    </region>
+    <region left="171" top="4932" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">MW</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5004" width="283" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициенты излучения топочной среды</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5040" width="52" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">χ.э</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="5040" width="160" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- угловой коэффициент</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5076" width="76" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ε.э</e>
+          <e type="operand">0.65</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="5076" width="224" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- условный коэффициент экранов</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5112" width="374" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Индивидуальный коэффициент тепловой эффективности</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5139" width="134" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ψ.э</e>
+          <e type="operand">χ.э</e>
+          <e type="operand">ε.э</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.65</e>
+        </result>
+      </math>
+    </region>
+    <region left="135" top="5139" width="447" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- среднее значение коэффициента тепловой эффективности экранов</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5166" width="162" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ψ.под</e>
+          <e type="operand">0.9</e>
+          <e type="operand">ψ.э</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.585</e>
+        </result>
+      </math>
+    </region>
+    <region left="162" top="5166" width="432" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- среднее значение коэффициента тепловой эффективности топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5202" width="142" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ψ.ш</e>
+          <e type="operand">0.8</e>
+          <e type="operand">ψ.э</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.52</e>
+        </result>
+      </math>
+    </region>
+    <region left="144" top="5202" width="442" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- среднее значение коэффициента тепловой эффективности ширмы</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5238" width="275" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэфффициент тепловой эффективности</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5265" width="308" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ψ.T</e>
+          <e type="operand">ψ.э</e>
+          <e type="operand">F.пр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ψ.под</e>
+          <e type="operand">F.под</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">ψ.ш</e>
+          <e type="operand">F.вч</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">F.пр</e>
+          <e type="operand">F.под</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">F.вч</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.6124</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="5319" width="293" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Высота горелов первого яруса от пода топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="297" top="5319" width="95" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.гор1</e>
+          <e type="operand">2.38</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="396" top="5319" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5355" width="368" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Высота горелок второго яруса от горелов первого яруса </p>
+        </content>
+      </text>
+    </region>
+    <region left="369" top="5355" width="95" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.гор2</e>
+          <e type="operand">3.04</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="468" top="5355" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5409" width="179" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расчетная высота горелок</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5445" width="217" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.гор</e>
+          <e type="operand">h.гор1</e>
+          <e type="operand">h.гор2</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">3.9</e>
+        </result>
+      </math>
+    </region>
+    <region left="225" top="5445" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5490" width="239" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расчетная высота топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5526" width="239" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h.тр</e>
+          <e type="operand">h.вч</e>
+          <e type="operand">h.пр</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">0.5</e>
+          <e type="operand">h.вч</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">28.35</e>
+        </result>
+      </math>
+    </region>
+    <region left="243" top="5526" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5562" width="391" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Относительное положение максимума температуры факела</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5589" width="190" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">χ.T</e>
+          <e type="operand">h.гор</e>
+          <e type="operand">h.тр</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">0.05</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1876</e>
+        </result>
+      </math>
+    </region>
+    <region left="189" top="5607" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5652" width="294" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент местоположения ядра факела</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5688" width="282" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">M</e>
+          <e type="operand">0.54</e>
+          <e type="operand">0.2</e>
+          <e type="operand">χ.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">0.12</e>
+          <e type="operand">r.r</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.4905</e>
+        </result>
+      </math>
+    </region>
+    <region left="333" top="5697" width="108" height="30" color="#000000" bgColor="#ff8040" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <content>
+            <p>Меняем пока ν''.Tф не будут одинаковы </p>
+          </content>
+        </description>
+        <input>
+          <e type="operand">ν''.T</e>
+          <e type="operand">1325.6</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5724" width="329" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Принимаем температуру газов на выходе из топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="441" top="5724" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="5742" width="50" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5751" width="84" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">k'.r</e>
+          <e type="operand">1.18</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="135" top="5751" width="451" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- исходное значение коэффициента ослабления для природного газа </p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5787" width="247" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент ослабления излучения</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5823" width="297" height="59" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">k.rr</e>
+          <e type="operand">k'.r</e>
+          <e type="operand">4</e>
+          <e type="operand">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">0.54</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">1470</e>
+          <e type="operand">ν''.T</e>
+          <e type="operand">273</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.704</e>
+        </result>
+      </math>
+    </region>
+    <region left="306" top="5832" width="50" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="5895" width="68" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">k.y</e>
+          <e type="operand">2.9</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="5895" width="219" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- углеводородное число для газа</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5931" width="506" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент, учитывающий влияние концентрации сажевых частиц в факеле</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="5967" width="301" height="63" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">k.c</e>
+          <e type="operand">0.55</e>
+          <e type="operand">ν''.T</e>
+          <e type="operand">273</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">1470</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">1.33</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">k.y</e>
+          <e type="operand">α.T</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.6983</e>
+        </result>
+      </math>
+    </region>
+    <region left="306" top="5985" width="50" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6039" width="179" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент ослабления</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6066" width="164" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">k.2</e>
+          <e type="operand">k.rr</e>
+          <e type="operand">k.c</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.4023</e>
+        </result>
+      </math>
+    </region>
+    <region left="162" top="6066" width="50" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6120" width="68" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">m.1</e>
+          <e type="operand">0.1</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="6120" width="74" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- для газа</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6156" width="76" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">m.2</e>
+          <e type="operand">1.05</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="6156" width="74" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- для газа</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6201" width="389" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Доля топочного объема, заполненная светящимся факелом</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6237" width="202" height="58" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">m</e>
+          <e type="operand">m.1</e>
+          <e type="operand">1.05</e>
+          <e type="operand">α.T</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">m.2</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.105</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="6300" width="552" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Усредненный коэффициент теплового излучения продуктов сгорания по высоте топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="585" top="6300" width="88" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>принимаем </p>
+        </content>
+      </text>
+    </region>
+    <region left="675" top="6300" width="62" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p</e>
+          <e type="operand">0.1</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6327" width="426" height="46" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ε.ϕ</e>
+          <e type="operand">m</e>
+          <e type="operand">1</e>
+          <e type="operand">e</e>
+          <e type="operand">k.2</e>
+          <e type="operand">p</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">1</e>
+          <e type="operand">m</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">1</e>
+          <e type="operand">e</e>
+          <e type="operand">k.rr</e>
+          <e type="operand">p</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.5098</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="6390" width="273" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент излучения топочной среды</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6426" width="221" height="55" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ε.T</e>
+          <e type="operand">ε.ϕ</e>
+          <e type="operand">ε.ϕ</e>
+          <e type="operand">1</e>
+          <e type="operand">ε.ϕ</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">ψ.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.6294</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="6489" width="76" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Комплекс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6525" width="233" height="64" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">m.T</e>
+          <e type="operand">ε.T</e>
+          <e type="operand">ψ.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ν.a</e>
+          <e type="operand">273</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">9800</e>
+          <e type="operand">q.F</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">1000</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.423</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="6597" width="256" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура газов на выходе из топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6633" width="367" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ν''.Tф</e>
+          <e type="operand">ν.a</e>
+          <e type="operand">273</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">1</e>
+          <e type="operand">M</e>
+          <e type="operand">m.T</e>
+          <e type="operand">0.6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">273</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1324.4622</e>
+        </result>
+      </math>
+    </region>
+    <region left="360" top="6642" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6678" width="521" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Энтальпия газов на выходе из топочной камеры при температуре свыше 1150 °C</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6714" width="289" height="49" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">H''.T</e>
+          <e type="operand">H.от</e>
+          <e type="operand">ν''.Tф</e>
+          <e type="operand">2050</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">0.075</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">25697.782</e>
+        </result>
+      </math>
+    </region>
+    <region left="306" top="6714" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6795" width="264" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Коэффициент тепловой эффективности</p>
+        </content>
+      </text>
+    </region>
+    <region left="297" top="6795" width="101" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.s</e>
+          <e type="operand">q.5</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.2</e>
+        </result>
+      </math>
+    </region>
+    <region left="450" top="6795" width="133" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">η.пк</e>
+          <e type="operand">η</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">93.6239</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="6822" width="210" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">φ.тепл</e>
+          <e type="operand">1</e>
+          <e type="operand">q.s</e>
+          <e type="operand">q.s</e>
+          <e type="operand">η.пк</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.9979</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="6885" width="239" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Тепловосприятие топочных экранов</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="6921" width="260" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Q.Л</e>
+          <e type="operand">Q.T</e>
+          <e type="operand">H''.T</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">φ.тепл</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">14480.3563</e>
+        </result>
+      </math>
+    </region>
+    <region left="279" top="6921" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="6966" width="70" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">χ</e>
+          <e type="operand">0.99</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="72" top="6966" width="206" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- степень эканированной топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="441" top="6993" width="30" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kg</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7002" width="301" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Удельное тепловосприятие топочных экранов</p>
+        </content>
+      </text>
+    </region>
+    <region left="315" top="7002" width="126" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">B</e>
+          <e type="operand">B.р</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">21.9621</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="7038" width="164" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.Л</e>
+          <e type="operand">B</e>
+          <e type="operand">Q.Л</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">χ</e>
+          <e type="operand">F.T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">172.5321</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="7038" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kW</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7092" width="286" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Тепловосприятия объема топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7128" width="170" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.V</e>
+          <e type="operand">B</e>
+          <e type="operand">Q.нр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.T</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">158.6937</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="7128" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kW</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7191" width="87" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.Vmax</e>
+          <e type="operand">290</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="90" top="7191" width="600" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- максимальное допустимое значение удельного тепловосприятия топочных экранов для газа</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7227" width="77" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.v</e>
+          <e type="operand">q.Vmax</e>
+          <e type="operator" args="2">&lt;</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="7227" width="507" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- полученное нами значение не превышает допустимое, а значит расчет верен</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7272" width="105" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Сечение топки</p>
+        </content>
+      </text>
+    </region>
+    <region left="153" top="7299" width="28" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7308" width="154" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">f.m</e>
+          <e type="operand">F.под</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">147.3932</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="7344" width="289" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Тепловосприятие сечения топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7380" width="178" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.f</e>
+          <e type="operand">B</e>
+          <e type="operand">Q.нр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">f.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">5303.0377</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="7380" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kW</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="99" top="7443" width="38" height="50" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kW</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7452" width="95" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.fmax</e>
+          <e type="operand">9300</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="153" top="7452" width="593" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- максимально допустимое значение удельного тепловосприятия топочных экранов для газа</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7497" width="84" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q.f</e>
+          <e type="operand">qfmax</e>
+          <e type="operator" args="2">&lt;</e>
+        </input>
+      </math>
+    </region>
+    <region left="81" top="7497" width="507" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- полученное нами значение не превышает допустимое, а значит расчет верен</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7533" width="389" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура и давление среды на выходе из экономайзера</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7569" width="90" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t''.эк</e>
+          <e type="operand">315</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="90" top="7569" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7605" width="98" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p''.эк</e>
+          <e type="operand">30.5</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="108" top="7605" width="34" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">MPa</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7650" width="275" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Температура и энтальпия на входе в НРЧ</p>
+        </content>
+      </text>
+    </region>
+    <region left="351" top="7677" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7686" width="168" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t'.нрч</e>
+          <e type="operand">t''.эк</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">318</e>
+        </result>
+      </math>
+    </region>
+    <region left="171" top="7686" width="26" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">°C</e>
+        </input>
+      </math>
+    </region>
+    <region left="207" top="7686" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">.</e>
+        </input>
+      </math>
+    </region>
+    <region left="234" top="7686" width="114" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h'.нк</e>
+          <e type="operand">1422.07</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7722" width="252" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Расход среды через топочные экраны</p>
+        </content>
+      </text>
+    </region>
+    <region left="198" top="7749" width="30" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kg</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7758" width="191" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">D.тэ</e>
+          <e type="operand">D.п</e>
+          <e type="operand">D.впр</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">256.7778</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="7803" width="105" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δq.доп</e>
+          <e type="operand">0.105</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="108" top="7803" width="369" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- поправка к тепловосприятию подвесных экранов и труб</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7839" width="90" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δq.кш</e>
+          <e type="operand">0.03</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="99" top="7839" width="226" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- полное экранирование стен КПД</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="7875" width="361" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Полный коэффициент дополнительного экранирования</p>
+        </content>
+      </text>
+    </region>
+    <region left="378" top="7884" width="79" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">δ.впр1</e>
+          <e type="operand">60</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="459" top="7884" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="7911" width="214" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">q''.доп</e>
+          <e type="operand">Δq.доп</e>
+          <e type="operand">Δq.кш</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.135</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="7947" width="191" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">d.впр</e>
+          <e type="operand">D.впр</e>
+          <e type="operand">δ.впр1</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.п</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.536</e>
+        </result>
+      </math>
+    </region>
+    <region left="189" top="7965" width="18" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">%</e>
+        </input>
+      </math>
+    </region>
+    <region left="207" top="7965" width="160" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- доля первого впрыска</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="8010" width="89" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">ψ.атэ</e>
+          <e type="operand">0.95</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="90" top="8010" width="340" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>- доля лучистого тепловосприятия топочной камеры</p>
+        </content>
+      </text>
+    </region>
+    <region left="207" top="8046" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="8055" width="207" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δh.впр</e>
+          <e type="operand">17.4</e>
+          <e type="operand">d.впр</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">78.9264</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="8109" width="420" height="55" color="#000000" fontSize="10">
+      <math>
+        <description active="false" position="Top" lang="eng">
+          <content></content>
+        </description>
+        <input>
+          <e type="operand">h'.шпп</e>
+          <e type="operand">h'.нк</e>
+          <e type="operand">B</e>
+          <e type="operand">Q.Л</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">1</e>
+          <e type="operand">q''.доп</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.тэ</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">ψ.атэ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">Δh.впр</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2678.5562</e>
+        </result>
+      </math>
+    </region>
+    <region left="423" top="8118" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="198" top="8154" width="176" height="41" color="#000000" fontSize="10">
+      <math optimize="2">
+        <description active="true" position="Top" lang="eng">
+          <content>
+            <p>Вставить значение h'шпп в равно</p>
+          </content>
+        </description>
+        <input>
+          <e type="operand">h'.шпп2</e>
+          <e type="operand">2693.8967</e>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="8172" width="32" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>по </p>
+        </content>
+      </text>
+    </region>
+    <region left="36" top="8172" width="109" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p'.шпп</e>
+          <e type="operand">26</e>
+          <e type="operand" style="unit">MPa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="162" top="8172" width="20" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">и</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="8217" width="562" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t'.шпп</e>
+          <e type="operand" style="string">T</e>
+          <e type="operand" style="string">P</e>
+          <e type="operand">p'.шпп</e>
+          <e type="operand" style="string">H</e>
+          <e type="operand">h'.шпп2</e>
+          <e type="operand" style="string">Water</e>
+          <e type="function" args="6">CoolProp_Props</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">°C</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">415.5884</e>
+        </result>
+      </math>
+    </region>
+    <region left="243" top="8253" width="38" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="8262" width="252" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">h''.врч</e>
+          <e type="operand">h'.шпп</e>
+          <e type="operand">Δh.впр</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2757.4826</e>
+        </result>
+      </math>
+    </region>
+    <region left="171" top="8289" width="184" height="41" color="#000000" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <content>
+            <p>Вставить значение h''врч в равно</p>
+          </content>
+        </description>
+        <input>
+          <e type="operand">h''.врч2</e>
+          <e type="operand">2772.8231</e>
+          <e type="operand" style="unit">kJ</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="8307" width="32" height="23" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>по </p>
+        </content>
+      </text>
+    </region>
+    <region left="27" top="8307" width="107" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p'.шпп</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">MPa</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">26</e>
+        </result>
+      </math>
+    </region>
+    <region left="144" top="8307" width="20" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">и</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="8361" width="578" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">t''.врч</e>
+          <e type="operand" style="string">T</e>
+          <e type="operand" style="string">P</e>
+          <e type="operand">p'.шпп</e>
+          <e type="operand" style="string">H</e>
+          <e type="operand">h''.врч2</e>
+          <e type="operand" style="string">Water</e>
+          <e type="function" args="6">CoolProp_Props</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">°C</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">425.3005</e>
+        </result>
+      </math>
+    </region>
+  </regions>
+</worksheet>
